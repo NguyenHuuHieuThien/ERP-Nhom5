@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="mylib_educate_act" model="ir.actions.act_window">
+            <field name="name">Đào Tạo</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">mylib.educate</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Thêm mới một khóa đào tạo
+                </p>
+            </field>
+        </record>
+        <record id="mylib_educate_tree" model="ir.ui.view">
+            <field name="name">Đào Tạo</field>
+            <field name="model">mylib.educate</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="id"/>
+                    <field name="name"/>
+                    <field name="start_time"/>
+                    <field name="end_time"/>
+
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>
