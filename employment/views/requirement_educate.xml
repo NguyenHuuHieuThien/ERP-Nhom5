@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="requirement_act" model="ir.actions.act_window">
+            <field name="name">Yêu Cầu Đào Tạo</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">requirement.educate</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Yeu Cau Dao Tao Here
+                </p>
+            </field>
+        </record>
+        <record id="mylib_requirement_tree" model="ir.ui.view">
+            <field name="name">Yêu Cầu Đào Tạo</field>
+            <field name="model">requirement.educate</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="dept"/>
+                    <field name="position"/>
+                    <field name="time_educate"/>
+                    <field name="content"/>
+                    <field name="note"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>
