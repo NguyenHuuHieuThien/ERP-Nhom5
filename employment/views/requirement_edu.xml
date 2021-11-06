@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="mylib_requirement_form_view" model="ir.ui.view">
+            <field name="name">Yêu Cầu Đào Tạo</field>
+            <field name="model">requirement.educate</field>
+            <field name="arch" type="xml">
+                <form>
+<!--                    <header>-->
+<!--                        <button class="btn-primary" name="custom_button_method" string="confirm" type="object"></button>-->
+<!--                        <button class="btn-primary" name="wiz_open" string="cancel" type="object"></button>-->
+<!--                    </header>-->
+                    <sheet>
+                        <group name="information">
+                            <group>
+                                <field name="positions"/>
+                                <field name="number" widget="bold_red"/>
+                                <field name="is_new"/>
+                                <field name="is_old"/>
+                                <field name="status"/>
+                            </group>
+                            <group>
+                                <field name="time_educate"/>
+                                <field name="content"/>
+                                <field name="note"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="general_information" string="Bộ phận yêu cầu">
+								<group>
+									<group string="Nơi yêu cầu">
+										<field name="division"/>
+                                        <field name="petitioner"/>
+                                        <field name="time"/>
+									</group>
+								</group>
+							</page>
+							<page name="additional_information" string="Bộ phận nhận yêu cầu">
+								<group>
+									<group string="Nơi tiếp nhận">
+										<field name="dept"/>
+                                        <field name="dept1"/>
+
+									</group>
+								</group>
+							</page>
+						</notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="mylib_requirement_tree" model="ir.ui.view">
+            <field name="name">Yêu Cầu Đào Tạo</field>
+            <field name="model">requirement.educate</field>
+            <field name="arch" type="xml">
+
+                <tree>
+                    <field name="division"/>
+                    <field name="petitioner"/>
+                    <field name="time"/>
+                    <field name="dept"/>
+                    <field name="dept1"/>
+                    <field name="positions"/>
+                    <field name="number" />
+                    <field name="time_educate" />
+                    <field name="status"/>
+                    <field name="content"/>
+                    <field name="note"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="requirement_act" model="ir.actions.act_window">
+            <field name="name">Yêu Cầu Đào Tạo</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">requirement.educate</field>
+            <!--<field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Tạo mới Yêu cầu đào tạo
+                </p>
+            </field> -->
+
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('mylib_requirement_tree')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('mylib_requirement_form_view')})]"/>
+        </record>
+    </data>
+</odoo>

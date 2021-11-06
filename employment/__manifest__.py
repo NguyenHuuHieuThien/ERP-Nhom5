@@ -14,12 +14,24 @@
         'views/templates.xml',
         'views/views.xml',
         'views/employee.xml',
-        'views/menu.xml'
+        'views/Extracurricular.xml',
+        'views/requirement_edu.xml',
+        'views/position.xml',
+        'views/classlist.xml',
+        'views/clseducate.xml',
+        'views/autoID.xml',
+        # 'views/tetx.xml',
+        # 'views/tree_view_asset.xml',
+        #'views/book_loan.xml',
+        'views/menu.xml',
+        'report/report.xml',
+        'report/report_template.xml'
 
     ],
     'demo': [
         # 'demo/demo.xml',
     ],
+
     'css': [],
     'qweb': [],
     'installable': True,

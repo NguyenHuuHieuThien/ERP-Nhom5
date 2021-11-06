@@ -1,33 +1,141 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
-        <record id="classlist_act" model="ir.actions.act_window">
+        <record id="mylib_classlist_form_view" model="ir.ui.view">
             <field name="name">Danh Sách Khóa Học</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">classlist.educate</field>
-            <field name="view_mode">tree,form</field>
-            <field name="help" type="html">
-                <p class="oe_view_nocontent_create">
-                    Danh sách lớp
-                </p>
+            <field name="model">classlist.educate</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title">
+                            <group>
+                                <field name="educate_image" string="Hình Ảnh" widget="image"/>
+                            </group>
+
+                            <h1>
+                                <field name="name" readonly="1"/>
+                            </h1>
+                        </div>
+                        <group name="images">
+                            <group>
+                                <field name="nameeducate"/>
+
+                            </group>
+                            <group>
+                                <field name="startday"/>
+                                <field name="endday"/>
+                            </group>
+                            <group>
+                                <field name="level"/>
+                                <field name="numberemp"/>
+                            </group>
+                            <group>
+                                <field name="anotherrqm"/>
+                                <field name="specialrqm"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="general_information" string="Thông Tin Lớp Đào Tạo">
+                                <group>
+                                    <group>
+                                        <field name="capacity"/>
+                                        <field name="content"/>
+                                    </group>
+                                    <group>
+                                        <field name="department"/>
+                                        <field name="schedules">
+                                            <tree>
+                                                <field name="name"/>
+                                                <field name="Classname"/>
+                                                <field name="startday"/>
+                                                <field name="endday"/>
+                                            </tree>
+                                            <form>
+                                                <field name="name"/>
+                                                <field name="Classname"/>
+                                                <field name="startday"/>
+                                                <field name="endday"/>
+                                            </form>
+                                        </field>
+
+                                    </group>
+                                    <field name="note" string="Nhận"/>
+                                </group>
+                            </page>
+                            <page name="additional_information" string="Thông Tin Người Huấn Luyện">
+                                <group>
+                                    <group>
+                                        <field name="mentor" string="Người phụ trách"/>
+                                        <field name="department" string="Bộ Phận"/>
+
+                                    </group>
+                                    <group>
+                                        <field name="telephone" string="Số điện Thoại"/>
+                                        <field name="email" string="Email"/>
+                                    </group>
+                                    <group>
+                                        <field name="note" string="Ghi chú"/>
+                                        </group>
+                                    <group>
+                                        <field name="target" string="Mục tiêu đào tạo"/>
+                                        </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
             </field>
         </record>
-        <record id="mylib_classlist_tree" model="ir.ui.view">
+
+        <record id="mylib_classlist_tree_view" model="ir.ui.view">
             <field name="name">Danh Sách Khóa Học</field>
             <field name="model">classlist.educate</field>
             <field name="arch" type="xml">
                 <tree>
                     <field name="name"/>
+                    <field name="nameeducate"/>
+                    <field name="department"/>
+                    <field name="mentor"/>
                     <field name="startday"/>
                     <field name="endday"/>
-                    <field name="mentor"/>
-                    <field name="content"/>
                     <field name="capacity"/>
-                    <field name="nbofweek"/>
-                    <field name="time"/>
-                    <field name="note"/>
-                </tree>
+                    <field name="telephone"/>
+                    <field name="email"/>
+
+            <!--                        <tree>-->
+            <!--                            <field name="content"/>-->
+            <!--                            <field name="WeekDays"/>-->
+            <!--                            <field name="request_hour_from"/>-->
+            <!--                            <field name="request_hour_to"/>-->
+            <!--                            <field name="note"/>-->
+            <!--                        </tree>-->
+            <!--                        <form>-->
+            <!--                            <field name="content"/>-->
+            <!--                            <field name="WeekDays"/>-->
+            <!--                            <field name="request_hour_from"/>-->
+            <!--                            <field name="request_hour_to"/>-->
+            <!--                            <field name="note"/>-->
+            <!--                        </form>-->
+
+            <field name="note"/>
+        </tree>
+    </field>
+</record>
+
+<record id="classlist_act" model="ir.actions.act_window">
+<field name="name">Danh Sách Khóa Học</field>
+<field name="type">ir.actions.act_window</field>
+<field name="res_model">classlist.educate</field>
+    <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Thêm khóa đào tạo ở đây
+                </p>
             </field>
-        </record>
-    </data>
+<!--&lt;!&ndash; <field name="view_type">form</field> &ndash;&gt; &lt;!&ndash; Odoo 13 has removed this field &ndash;&gt;-->
+<!--<field name="view_ids" eval="[(5, 0, 0),-->
+<!--                (0, 0, {'view_mode': 'tree', 'view_id': ref('mylib_classlist_tree_view')}),-->
+<!--                (0, 0, {'view_mode': 'form', 'view_id': ref('mylib_classlist_form_view')})]"/>-->
+</record>
+</data>
 </odoo>

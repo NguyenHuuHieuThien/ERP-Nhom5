@@ -7,63 +7,52 @@
             <field name="inherit_id" ref="hr.view_employee_form"/>
             <field name="arch" type="xml">
 
-               <field name ='coach_id' position="after">
-                        <field name="datepartin"/>
-               </field>
-
-
+                <field name='coach_id' position="after">
+                    <field name="datepartin"/>
+                </field>
 
                 <xpath expr="//page[3]" position="after">
-                    <page string ="Thông Tin Thêm">
-                        <tree>
-                        <field name="classeducate"/>
-                        <field name="extracurricular"/>
-                        </tree>
+                    <page string="Thông Tin Thêm">
+
+                            <field name="classeducate">
+                                <tree>
+                                    <field name="Classname"/>
+                                    <field name="startday"/>
+                                    <field name="endday"/>
+                                    <field name="mentor"/>
+                                    <field name="Address"/>
+                                </tree>
+                                <form>
+                                     <field name="Classname"/>
+                                    <field name="startday"/>
+                                    <field name="endday"/>
+                                    <field name="mentor"/>
+                                    <field name="Address"/>
+                                </form>
+                            </field>
+                            <field name="extracurricular"/>
+
                     </page>
                 </xpath>
             </field>
         </record>
+
 
         <record id="employee_tree_view" model="ir.ui.view">
             <field name="name">employee_tree_view</field>
             <field name="model">hr.employee</field>
             <field name="inherit_id" ref="hr.view_employee_tree"/>
             <field name="arch" type="xml">
-                <field name="parent_id" position="after">
-                    <field name="classeducate"/>
+                <field name="name" position="after">
+                    <field name="nameemp"/>
                 </field>
+                <field name="parent_id" position="after">
+                    <field name="image_1920"/>
+                </field>
+
             </field>
         </record>
-<!--        <record id="employee_form_view" model="ir.ui.view">-->
-<!--            <field name="name">employee.oder.form</field>-->
-<!--            <field name="model">hr.employee</field>-->
-<!--            <field name="inherit_id" ref="hr.view_employee_form"/>-->
-<!--            <field name="arch" type="xml">-->
-<!--                <field name="work_email" position="after">-->
-<!--                    <field name="datepartin"/>-->
-<!--                </field>-->
 
-<!--            </field>-->
-
-<!--hr.view_employee_tree-->
-<!--        hr.employee.tree-->
-<!--        </record>-->
-
-<!--        <record id="employee_tree_view" model="ir.ui.view">-->
-<!--            <field name="name">employee.tree.view</field>-->
-<!--            <field name="model">hr.employee</field>-->
-<!--            <field name="arch" type="xml">-->
-<!--                <tree string="employee" default_order="create_date desc">-->
-<!--                    <field name="name"/>-->
-<!--                    <field name="work_phone"/>-->
-<!--                    <field name="work_email"/>-->
-<!--                    <field name="department_id"/>-->
-<!--                    <field name="job_id"/>-->
-<!--                    <field name="parent_id"/>-->
-<!--                    <field name="datepartin"/>-->
-<!--                </tree>-->
-<!--            </field>-->
-<!--        </record>-->
 
 
         <record id="mylib_employee_act" model="ir.actions.act_window">
@@ -76,9 +65,6 @@
                     nv
                 </p>
             </field>
-<!--            <field name="view_ids" eval="[(5, 0, 0),-->
-<!--                (0, 0, {'view_mode': 'tree', 'view_id': ref('employee_tree_view')}),-->
-<!--                (0, 0, {'view_mode': 'form', 'view_id': ref('employee_form_view')})]"/>-->
         </record>
 
 

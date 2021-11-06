@@ -7,11 +7,16 @@
                       action="mylib_employee_act" sequence="1"/>
 
             <menuitem id="mylib_educate_menu" name="Đào Tạo" parent="mylib_root_menu"
-                      action="mylib_educate_act" sequence="5"/>
+                      sequence="5"/>
                         <menuitem id="mylib_requirement_educate_menu" name="Yêu Cầu Đào Tạo" parent="mylib_educate_menu"
                                   action="requirement_act" sequence="5" />
+                        <menuitem id="mylib_position_educate_menu" name="Vị trí Đào Tạo" parent="mylib_educate_menu"
+                                  action="position_act" sequence="5" />
+                        <menuitem id="mylib_educateclass_educate_menu" name="Lớp Đào Tạo" parent="mylib_educate_menu"
+                                  action="schedule_act" sequence="5" />
                         <menuitem id="mylib_classlist_educate_menu" name="Danh Sách Khóa Học" parent="mylib_educate_menu"
-                                  action="classlist_act" sequence="5" />
+                                  action="classlist_act" sequence="5" groups="base.group_user"/>
+
 
             <menuitem id="mylib_extracurricular_menu" name="Hoạt Động Ngoại Khóa" parent="mylib_root_menu"
                       action="mylib_extracurricular_act" sequence="10"/>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_lopdaotao">
+        <t t-call="web.basic_layout">
+            <t t-foreach="docs" t-as="o">
+                <div class="page">
+                    <div class="oe_structure"/>
+                    <div class="col-xs-8">
+                        <tr>
+                            <td width="100%">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <span>
+                                                <strong>Mã Khoa hoc:</strong>
+                                            </span>
+                                        </td>
+                                        <td colspan="6" class="text-center">
+                                            <span t-field="o.name"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span>
+                                                <strong>Tên khoa hoc:</strong>
+                                            </span>
+                                        </td>
+                                        <td colspan="6" class="text-center">
+                                            <span t-field="o.nameeducate"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span>
+                                                <strong>Bo phan:</strong>
+                                            </span>
+                                        </td>
+                                        <td colspan="6" class="text-center">
+                                            <span t-field="o.department"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span>
+                                                <strong>nguoi phu trach:</strong>
+                                            </span>
+                                        </td>
+                                        <td colspan="6" class="text-center">
+                                            <span t-field="o.mentor"/>
+                                        </td>
+</tr>
+
+                                    <tr>
+                                        <td>
+                                            <span>
+                                                <strong>Ngay bat dau:</strong>
+                                            </span>
+                                        </td>
+                                        <td colspan="6" class="text-center">
+                                            <span t-field="o.startday"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span>
+                                                <strong>Ngay ket thuc:</strong>
+                                            </span>
+                                        </td>
+                                        <td colspan="6" class="text-center">
+                                            <span t-field="o.endday"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span>
+                                                <strong>noi dung:</strong>
+                                            </span>
+                                        </td>
+                                        <td colspan="6" class="text-center">
+                                            <span t-field="o.content"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span>
+                                                <strong>si so:</strong>
+                                            </span>
+                                        </td>
+                                        <td colspan="6" class="text-center">
+                                            <span t-field="o.capacity"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span>
+                                                <strong>so buoi trong tuan:</strong>
+                                            </span>
+                                        </td>
+                                        <td colspan="6" class="nbofweek">
+                                            <span t-field="o.endday"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </div>
+                </div>
+                <br/>
+
+                <!--            <t t-if="o.order_line">-->
+                <!--                <span>Sản phẩm</span>-->
+                <!--                <table class="table table-sm o_main_table" name="appointment">-->
+                <!--                    <thead>-->
+                <!--                        <tr>-->
+                <!--                            <th name="product_id" class="text-left">-->
+                <!--                                <span>Tên sản phẩm</span>-->
+                <!--                            </th>-->
+                <!--                             <th name="product_uom_qty" class="text-left">-->
+                <!--                                <span>Số lượng</span>-->
+                <!--                            </th>-->
+                <!--                            <th name="price_unit" class="text-left">-->
+                <!--                                <span>Chi phí sửa</span>-->
+                <!--                            </th>-->
+                <!--                            <th name="tax_id" class="text-left">-->
+                <!--                                <span>Thuế</span>-->
+                <!--                            </th>-->
+                <!--                            <th name="price_subtotal" class="text-left">-->
+                <!--                                <span>Tổng chi phí</span>-->
+                <!--                            </th>-->
+                <!--                        </tr>-->
+                <!--                    </thead>-->
+                <!--                    <t t-set="order_count" t-value="0"/>-->
+                <!--                    <t t-foreach="o.order_line" t-as="line">-->
+                <!--                        <t t-set="order_count" t-value="order_count +1"/>-->
+                <!--                        <tr>-->
+                <!--                            <td>-->
+                <!--                                <span t-field="line.product_id"/>-->
+                <!--                            </td>-->
+                <!--                             <td>-->
+                <!--                                <span t-field="line.product_uom_qty"/>-->
+                <!--                            </td>-->
+                <!--                             <td>-->
+                <!--                                <span t-field="line.price_unit"/>-->
+                <!--                            </td>-->
+                <!--                             <td>-->
+                <!--                                <span t-field="line.tax_id"/>-->
+                <!--                            </td>-->
+                <!--                             <td>-->
+                <!--                                <span t-field="line.price_subtotal"/>-->
+                <!--                            </td>-->
+                <!--                        </tr>-->
+                <!--                    </t>-->
+                <!--                </table>-->
+
+                <!--  <table class="table table-sm">-->
+                <!--                 <tr>-->
+                <!--                 <td>-->
+                <!--                <span>-->
+                <!--               <strong>Giá trước thuế:</strong>-->
+                <!--              </span>-->
+                <!--                 </td>-->
+                <!--                    <td colspan="6" class="text-center">-->
+                <!--                    <span t-field="o.amount_untaxed"/>-->
+                <!--                     </td>-->
+                <!--                   </tr>-->
+                <!--                  <tr>-->
+                <!--                 <td>-->
+                <!--                <span>-->
+                <!--               <strong>Giá thuế:</strong>-->
+                <!--              </span>-->
+                <!--                 </td>-->
+                <!--                    <td colspan="6" class="text-center">-->
+                <!--                    <span t-field="o.amount_tax"/>-->
+                <!--                     </td>-->
+                <!--                   </tr>-->
+                <!--                  <tr>-->
+                <!--                 <td>-->
+                <!--                <span>-->
+                <!--               <strong>Tổng:</strong>-->
+                <!--              </span>-->
+                <!--                 </td>-->
+                <!--                    <td colspan="6" class="text-center">-->
+                <!--                    <span t-field="o.amount_total"/>-->
+                <!--                     </td>-->
+                <!--                   </tr>-->
+                <!--                  </table>-->
+                <!--        </t>-->
+            </t>
+        </t>
+    </template>
+</odoo>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="schedule_form_view" model="ir.ui.view">
+            <field name="name">schedule.form.view</field>
+            <field name="model">schedule.edu</field>
+            <field name="arch" type="xml">
+                <form>
+
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" readonly="1"/>
+                            </h1>
+                        </div>
+                        <group name="images">
+                            <group>
+                                <field name="Classname"/>
+                                <field name="course">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="nameeducate"/>
+                                        <field name="startday"/>
+                                        <field name="endday"/>
+                                    </tree>
+                                    <form>
+                                        <field name="name"/>
+                                        <field name="nameeducate"/>
+                                        <field name="startday"/>
+                                        <field name="endday"/>
+                                    </form>
+
+                                </field>
+                            </group>
+                            <group>
+                                <field name="startday"/>
+                                <field name="endday"/>
+                            </group>
+                            <group>
+                                <field name="mentor"/>
+                                <field name="Address"/>
+                            </group>
+                            <group>
+                                <field name="capacity"/>
+                                <field name="nbofweek"/>
+                            </group>
+                            <group>
+                                <field name="telephone"/>
+                                <field name="email"/>
+                            </group>
+                            <group>
+                                <field name="WeekDays"/>
+                            </group>
+                            <group>
+                                <field name="request_hour_from" widget="float_time"/>
+                                <field name="request_hour_to" widget="float_time"/>
+                            </group>
+                            <group>
+                                <field name="note"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="schedule_tree_view" model="ir.ui.view">
+            <field name="name">schedule.tree.view</field>
+            <field name="model">schedule.edu</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="Classname"/>
+                    <field name="course"/>
+                    <field name="startday"/>
+                    <field name="endday"/>
+                </tree>
+            </field>
+        </record>
+        <record id="schedule_act" model="ir.actions.act_window">
+            <field name="name">Lớp đào tạo</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">schedule.edu</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Thêm lớp đào tạo ở đây
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

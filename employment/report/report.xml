@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+    id="classlist_card"
+    model="classlist.educate"
+    string="Báo cáo"
+    report_type="qweb-pdf"
+    name="employment.report_lopdaotao"
+    file="employment.report_lopdaotao"
+/>
+
+</odoo>
